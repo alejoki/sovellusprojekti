@@ -2,9 +2,6 @@ const express = require('express');
 const router = express.Router();
 const car = require('../models/car_model');
 
-const basicAuth = require('express-basic-auth');
-router.use(basicAuth({users: { 'admin': '1234' }}))
-
 router.get('/',
     function (request, response) {
         car.getAll(function (err, dbResult) {
